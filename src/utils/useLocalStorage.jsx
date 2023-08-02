@@ -1,5 +1,4 @@
 
-import React from 'react';
 
 export function saveToLocalStorage(key, value) {
   try {

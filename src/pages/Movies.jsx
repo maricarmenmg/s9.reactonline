@@ -2,7 +2,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import Heading from '../components/Heading';
-import MoviesList from '../components/MoviesList';
+import MoviesList from '../components/MovieList';
 
 
 function Home() {
@@ -21,7 +21,6 @@ function Home() {
         <MoviesList />
 
       </main>
-
       {/*  Site footer */}
       <Footer />
     </div>

@@ -45,3 +45,55 @@ export const getMovieDetails = async (movieId) => {
   }
 }
 
+export const getPopularShows = async () => {
+
+  try {
+    const response = await axios.get(`${BASE_URL}/${tvPopular}`, {
+      headers: addApiKeyToHeaders({}) 
+    });
+
+    const shows = response.data.results.map(show => ({
+      id: show.id,
+      name: show.name, 
+      poster_path: show.poster_path
+    }));
+
+    return shows;
+
+  } catch (error) {
+    console.error('Error fetching popular shows:', error);
+    throw error; 
+  }
+
+}
+
+
+export const getShowDetails = async (showId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/tv/${showId}`, {
+      headers: addApiKeyToHeaders({}),
+    });
+
+    const show = {
+      id: response.data.id,
+      name: response.data.name,
+      poster_path: response.data.poster_path,
+      overview: response.data.overview,
+      vote_average: response.data.vote_average,
+      first_air_date: response.data.first_air_date,
+    };
+
+    return show;
+  } catch (error) {
+    console.error('Error fetching show details:', error);
+    throw error;
+  }
+}
+// MOVIE
+export const moviePopular = 'movie/popular';
+export const movieTopRated = 'movie/top_rated';
+
+
+// TV
+export const tvPopular = 'tv/popular';
+export const tvTopRated = 'tv/top_rated';
