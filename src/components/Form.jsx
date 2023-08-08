@@ -22,12 +22,12 @@ const Login = () => {
   return (
   <section className="bg-transparent">
 
-    <div className="max-w-6xl mx-auto py-12 sm:px-26">
+    <div className="max-w-6xl mx-auto py-12 mt-32 sm:px-26">
       <div className="pt-6 pb-12 md:pt-6 md:pb-20">
         {/* Page header */}
         <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
           <h3 className="h3 text-project-100 font-prompt">Welcome back <br/>Log In to your account</h3>
-          <h4 className="h4 text-gray-600 font-prompt font-light"> To see the starships list you must to be logged in.</h4>
+          <h4 className="h4 text-gray-600 font-prompt font-light">To see the detail you must be logged in.</h4>
         </div>
 
    <div className="max-w-sm mx-auto">
@@ -102,7 +102,7 @@ const Register = () => {
 
   <section className="bg-transparent">
 
-    <div className="max-w-6xl mx-auto py-12 sm:px-26">
+       <div className="max-w-6xl mx-auto py-12 mt-32 sm:px-26">
        <div className="pt-6 pb-12 md:pt-6 md:pb-20">
 
         {/* Page header */}

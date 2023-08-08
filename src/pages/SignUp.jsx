@@ -1,21 +1,19 @@
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 import { Register } from '../components/Form';
-import Footer from '../components/Footer';
 
 
 function SignUp() {
   
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-      {/*  Site header */}
-      <Header />
-      {/*  Page content */}
+
+      <Layout title="SignUp">
+
       <main className="grow">
-        {/*  Page sections */}
         <Register  />
       </main>
-      {/*  Site footer */}
-      <Footer />
+
+      </Layout>
     </div>
   );
 }

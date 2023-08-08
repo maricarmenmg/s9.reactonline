@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 import logo from '../assets/images/logo/logo.svg';
@@ -6,7 +6,6 @@ import { FilmIcon, TvIcon  } from '@heroicons/react/24/solid'
 
 
 function Header() {
-
 
 
   return (
@@ -27,7 +26,6 @@ function Header() {
             <FilmIcon className="h-6 w-6 text-gray-500" />
               <li>
                 <Link
-                 
                   className="font-medium text-gray-600 decoration-blue-500 decoration-2 underline-offset-2 hover:underline px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
                   to="/movies"
                 >

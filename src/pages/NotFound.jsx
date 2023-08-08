@@ -1,17 +1,16 @@
 
 import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
 
-import  Header  from '../components/Header';
-import  Footer  from '../components/Footer';
 
 import  NotFoundImage from '../assets/images/sheldon.png';
+
 
 function NotFound() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
-      {/*  Site header */}
-      <Header />
+      <Layout title="Not Found">
 
       {/*  Page content */}
       <main className="flex-grow">
@@ -35,8 +34,7 @@ function NotFound() {
 
       </main>
 
-      {/*  Site footer */}
-      <Footer />
+      </Layout>
 
     </div>
   );

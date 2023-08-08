@@ -6,9 +6,8 @@ import HeroImage from '../assets/images/hero/hero-image.png';
 
 function Hero() {
   return (
-    <section className="relative">
-      {/* Bg */}
-      <div className="absolute inset-0 r pointer-events-none -z-10" aria-hidden="true" />
+    <section className="relative  ">
+      <div className="absolute bg-gray-100  inset-0 r pointer-events-none -z-10" aria-hidden="true" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           {/* Hero content */}
@@ -23,7 +22,7 @@ function Hero() {
                 </span>
  
               </h1>
-              <p className="text-2xl text-gray-500 mb-10">
+              <p className="text-2xl text-project-100 mb-10">
               Millions of movies, TV shows and people to discover.</p>
               {/* Buttons */}
               <div
