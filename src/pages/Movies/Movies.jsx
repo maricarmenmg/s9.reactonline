@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
 import MoviesList from '../../components/movie/MovieList';
-import Search from '../../components/Search';
+import Search from '../../components/search/Search';
 
 
 function Movies() {
@@ -10,14 +10,13 @@ function Movies() {
 
       <Layout title="Movies">
       <main className="grow">
-      <div>
-      <h1>Buscador de películas y programas de TV</h1>
-      <Search />
-    </div>
+     
         <Heading 
           title="Popular Movies"
           subtitle={`The most popular movies in the world`}
         />
+         <h1>Buscador de películas y programas de TV</h1>
+      <Search />
         <MoviesList />
       </main>
 

@@ -4,7 +4,7 @@ import ShowCard from './ShowCard';
 
 const ShowList = () => {
 
-  const shows = useShows();
+  const { topRatedShows } = useShows();
 
   return (
     <section>
@@ -18,14 +18,14 @@ const ShowList = () => {
           </div>
           {/* Content  */}
           <div>
-
             {/* SHows grid */}
             <div className="max-w-sm mx-auto sm:max-w-none grid gap-8 sm:grid-cols-2 md:grid-cols-5 items-start" data-aos="zoom-out">
-              {shows.map((show) => (
-               <ShowCard 
-               key={show.id} 
-               show={show} />
-               ))}
+            {topRatedShows.map((show) => (
+            <ShowCard 
+            key={show.id} 
+            show={show} 
+            />
+           ))}
             </div>
           </div>
         </div>

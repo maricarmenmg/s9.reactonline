@@ -21,7 +21,7 @@ export const getPopularMovies = async () => {
 };
 
 
-// 1.1._ Movie Details
+// 1.1.- Movie Details
 
 export const getMovieDetails = async (id) => {
 
@@ -41,22 +41,82 @@ export const getMovieDetails = async (id) => {
 
 }
 
+// 1.2.- Movie Credits
 
-// 2.- Shows
+export const getMovieCredits = async (id) => {
 
-export const getPopularTVShows = async () => {
   try {
-    const response = await axios.get(import.meta.env.VITE_TMDB_API + 'tv/top_rated', {
+    const response = await axios.get(import.meta.env.VITE_TMDB_API + `movie/${id}/credits`, {
       params: {
         api_key: API_KEY,
-      },
+      }
     });
-    return response.data.results;
+
+    return response.data;
+
   } catch (error) {
-    console.error('Error fetching popular TV shows:', error);
-    return [];
+    console.error('Error fetching movie credits', error);
+    return {};
   }
-};
+
+}
+
+// TV Shows
+
+
+// 1.- Shows
+
+  export const getTopRatedTVShows = async () => {
+    try {
+      const response = await axios.get(import.meta.env.VITE_TMDB_API + 'tv/top_rated', {
+        params: {
+          api_key: API_KEY,
+        },
+      });
+      return response.data.results;
+    } catch (error) {
+      console.error('Error fetching popular TV shows:', error);
+      return [];
+    }
+
+  };
+
+export const getTVShowDetails = async (id) => {
+  
+    try {
+      const response = await axios.get(import.meta.env.VITE_TMDB_API + `tv/${id}`, {
+        params: {
+          api_key: API_KEY,
+        }
+      });
+  
+      return response.data;
+  
+    } catch (error) {
+      console.error('Error fetching TV show details', error);
+      return {};
+    }
+  
+  }
+
+  export const getTVShowCredits = async (id) => {
+    
+    try {
+      const response = await axios.get(import.meta.env.VITE_TMDB_API + `tv/${id}/credits`, {
+        params: {
+          api_key: API_KEY,
+        }
+      });
+  
+      return response.data;
+  
+    } catch (error) {
+      console.error('Error fetching TV show credits', error);
+      return {};
+    }
+  
+  }
+
 
 
 

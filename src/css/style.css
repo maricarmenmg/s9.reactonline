@@ -13,6 +13,28 @@ html {
   overflow-y: scroll;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 1.9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1DB9D8;
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 body {
   background-color:white;
@@ -40,6 +62,25 @@ h2 {
   font-size: 1.0rem;
 }
 
+.castMovies{
+  scrollbar-width: thin;
+  scrollbar-color: #d95f07 #ffffff00;
+  border:none !important;
+}
 
 
 
+/* Estilos personalizados para la barra de desplazamiento horizontal */
+.scrollbar-horizontal {
+  scrollbar-color: blue-500 blue-200; /* Cambia los colores según tus preferencias */
+}
+
+/* Estilos para el pulgar (parte arrastrable) de la barra de desplazamiento horizontal */
+.scrollbar-horizontal::-webkit-scrollbar-thumb {
+  background-color: #3B82F6; /* Cambia el color del pulgar */
+}
+
+/* Estilos para la pista (parte no arrastrable) de la barra de desplazamiento horizontal */
+.scrollbar-horizontal::-webkit-scrollbar-track {
+  background-color: #BFDBFE; /* Cambia el color de la pista */
+}

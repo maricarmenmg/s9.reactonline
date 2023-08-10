@@ -36,7 +36,7 @@ const Search = () => {
           onChange={handleChange}
           placeholder="Buscar películas o programas de televisión"
         />
-        <button type="submit">Buscar</button>
+        <button type="submit">Buscar....</button>
       </form>
 
       {results.map((result) => (

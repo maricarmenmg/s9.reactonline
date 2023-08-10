@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 
-//import { FilmIcon } from '@heroicons/react/24/solid'
-
 const imagesURL = import.meta.env.VITE_TMDB_IMG;
+
 const MovieCard = ({ movie }) => {
 
   return (
@@ -14,8 +13,8 @@ const MovieCard = ({ movie }) => {
         className="w-80 h-90 object-cover rounded-md shadow-md"
         />
         <h2 className="mt-2 text-project-100 ">{movie.title}</h2>
-        <p className="">{movie.vote_average}</p>
-        <Link to={`/movie/${movie.id}`}>View More</Link>
+        <p className="font-semibold">Average: {movie.vote_average}</p>
+        <Link className="text-sm" to={`/movie/${movie.id}`}> 👁️ View More </Link>
       </div>
 
   );

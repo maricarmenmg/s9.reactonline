@@ -13,7 +13,7 @@
 ### **🎯 Objetivos específicos**
 
 - [x] 📬  Crear por lo menos 5 componentes.
-- [ ] 📪  Usar input y output para pasar datos entre componentes.
+- [x] 📬  Usar input y output para pasar datos entre componentes.
 - [x] 📬  Usar las rutas.
 - [ ] 📪  Utilizar Redux o Context.
 - [x] 📬  Llamar mínimo a una API externa.

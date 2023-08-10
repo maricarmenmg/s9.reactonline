@@ -1,22 +1,25 @@
 
 import { useParams } from 'react-router-dom';
 import Layout from '../../components/Layout';
-import { GenresMovies, DurationMovies, AverageMovies, BudgetMovies } from '../../components/Details';
+import {  GenresMovies, DurationMovies, BudgetMovies } from '../../components/Details';
+import  { CreditsMovies } from '../../components/Credits';
 import useMovies from '../../services/hooks/useMovies'
 
 import { ClockIcon }  from '@heroicons/react/24/solid'
 
 function MoviePage() {
+
   const { id } = useParams(); // Obtén el ID de la película desde los parámetros de la URL
-  const { movie } = useMovies(id); // Utiliza el ID para obtener los detalles de la película
+  const { movie, movieCredits } = useMovies(id); // Utiliza el ID para obtener los detalles de la película
+  
   const imagesURL = import.meta.env.VITE_TMDB_IMG;
 
-  
   // Si no se encuentra la película o no hay datos disponibles, puedes mostrar un mensaje de error o un indicador de carga.
   if (!movie || Object.keys(movie).length === 0) {
     return <div>Loading...</div>;
   }
 
+ 
   return (
 
 
@@ -45,17 +48,26 @@ function MoviePage() {
             </div>
             {/* Column */}
             <div className="w-full md:w-1/2 space-y-8">
-            {/* Item */}
+
+            {/* Item Title */}
             <div className="space-y-2">
                 <h3 className="h3 font-bold">{movie.title}</h3>
-                <p className="text-2xl font-spacegrotesk  text-gray-500">{movie.tagline}</p>
+                <p className="text-2xl  text-gray-500">{movie.tagline}</p>
               </div>
-              {/* Item */}
+
+              {/* Item Average */}
+              <div className="space-y-2">
+                <h4 className="h4 font-bold">Average</h4>
+                <p className="text-2xl font-semibold text-project-100 ">{movie.vote_average}</p>
+              </div>
+
+              {/* Item Synopsis */}
               <div className="space-y-2">
                 <h4 className="text-xl  font-bold">{'Synopsis'}</h4>
                 <p className="text-gray-500 text-1xl">{movie.overview}</p>
               </div>
-              {/* Item */}
+
+              {/* Item Genres*/}
               <div className="space-y-2">
                 <h4 className="text-xl  font-bold">{'Genres'}</h4>
                 <GenresMovies genres={movie.genres} />
@@ -67,21 +79,22 @@ function MoviePage() {
                 <DurationMovies duration={movie.runtime} />
               </div>
               
-              {/* Item */}
-              <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
-                <ClockIcon className="w-6 h-6 text-project-100" />
-                <h4 className="text-lg  font-bold">Average</h4>
-                <AverageMovies average={movie.vote_average} />
-            </div>
-            {/* Item */}
+
+            {/* Item Budget */}
             <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
               <ClockIcon className="w-6 h-6 text-project-100" />
               <h4 className="text-lg font-bold">Budget</h4>
               <BudgetMovies budget={movie.budget} />
           </div>
+
           </div>
         </div>
-        <h1> Cast </h1>
+        
+        <div className="space-y-2 space-x-2 ">
+        <h3 className="h3 font-bold"> Main cast </h3>
+        <CreditsMovies credits={movieCredits} />
+        </div>
+
       </div>
       </div>
     </section>

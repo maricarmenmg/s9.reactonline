@@ -1,16 +1,12 @@
 
 import { Link } from 'react-router-dom';
-
 import logo from '../assets/images/logo/logo.svg';
-import { FilmIcon, TvIcon  } from '@heroicons/react/24/solid'
-
+import { FilmIcon, TvIcon, MagnifyingGlassCircleIcon} from '@heroicons/react/24/solid'
 
 function Header() {
-
-
   return (
-    <header className="absolute w-full z-30 ">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 ">
+    <header className="absolute w-full z-30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Site branding */}
           <div className="shrink-0 mr-4">
@@ -20,40 +16,53 @@ function Header() {
             </Link>
           </div>
           {/* Desktop navigation */}
-          <nav className="flex grow">
+          <nav className="flex grow items-center">
             {/* Desktop sign in links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
-            <FilmIcon className="h-6 w-6 text-gray-500" />
-              <li>
+            <ul className="flex-grow flex items-center justify-end space-x-4">
+              <li className="flex items-center">
+                <FilmIcon className="h-6 w-6 text-gray-500 mr-1" />
                 <Link
-                  className="font-medium text-gray-600 decoration-blue-500 decoration-2 underline-offset-2 hover:underline px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="font-medium text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
                   to="/movies"
                 >
-                 
                   Movies
                 </Link>
               </li>
-              <TvIcon className="h-6 w-6 text-gray-500" />
-              <li>
+              <li className="flex items-center">
+                <TvIcon className="h-6 w-6 text-gray-500 mr-1" />
                 <Link
-                  className="font-medium text-gray-600 decoration-blue-500 decoration-2 underline-offset-2 hover:underline px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="font-medium text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
                   to="/shows"
                 >
                   TV Shows
                 </Link>
               </li>
-               
-                <li>
+
+              <li className="flex items-center">
+                <MagnifyingGlassCircleIcon className="h-6 w-6 text-gray-500 mr-1" />
                 <Link
-                  className="font-medium text-gray-600 decoration-blue-500 decoration-2 underline-offset-2 hover:underline px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="font-bold text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
+                  to="/search"
+                >
+                  Search
+                </Link>
+              </li>
+
+              <li className="flex items-center">
+                /
+              </li>
+              
+
+              <li>
+                <Link
+                  className="font-medium uppercase text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
                   to="/signin"
                 >
                   Sign in
                 </Link>
               </li>
-
               <li className="ml-3">
-                <Link className="btn-sm text-gray-700 bg-project-200 hover:bg-blue-600 w-full shadow-sm" to="/signup">
+                <Link className="btn-sm text-gray-700 uppercase bg-project-200 hover:bg-blue-600 w-full shadow-sm" to="/signup">
                   Join The Community
                 </Link>
               </li>

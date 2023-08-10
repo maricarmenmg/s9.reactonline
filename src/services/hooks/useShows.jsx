@@ -1,20 +1,48 @@
 // Encapsulates logic for fetching shows from the API
+
 import { useEffect, useState } from 'react';
-import { getPopularTVShows } from '../api/Api';
+import { 
+  getTopRatedTVShows,
+  getTVShowDetails,
+  getTVShowCredits 
+} from '../api/Api';
 
-const useShows = () => {
-  const [shows, setShows] = useState([]);
-
+function useShows (id) {
+  const [topRatedShows, setTopRatedShows] = useState([]);
+  const [show, setShowDetails] = useState({});
+  const [showCredits, setShowCredits] = useState({});
+  
+  
   useEffect(() => {
-    const fetchShows = async () => {
-      const showData = await getPopularTVShows();
-      setShows(showData);
-    };
+    const fetchData = async () => {
+      const shows = await getTopRatedTVShows();
+      setTopRatedShows(shows);
+    }
+      const fetchTVShowDetails = async () => {
+        if (id) {
+          const details = await getTVShowDetails(id);
+          setShowDetails(details);
+        }
+      }
 
-    fetchShows();
-  }, []);
+      const fetchTVShowCredits = async () => {
+        if (id) {
+          const credits = await getTVShowCredits(id);
+          setShowCredits(credits);
+        }
+      }
 
-  return shows;
-};
+     
+
+
+    fetchData();
+    fetchTVShowDetails();
+    fetchTVShowCredits();
+
+
+  }, [id]);
+
+  return { topRatedShows, show, showCredits };
+}
 
 export default useShows;
