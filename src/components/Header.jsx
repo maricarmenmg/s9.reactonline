@@ -1,9 +1,13 @@
-
+import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo/logo.svg';
 import { FilmIcon, TvIcon, MagnifyingGlassCircleIcon} from '@heroicons/react/24/solid'
 
 function Header() {
+
+  const [searchModalOpen, setSearchModalOpen] = useState(false)
+
+
   return (
     <header className="fixed  w-full z-30 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">

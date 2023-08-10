@@ -1,51 +1,32 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
+import SearchForm from './SearchForm';
+import SearcResults from './SearchResults';
+import { searchTMDB } from '../../services/api/Api';
 
 const Search = () => {
-  const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const navigate = useNavigate(); 
 
-  const handleChange = (event) => {
-    setQuery(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    searchTMDB();
-  };
-
-  const searchTMDB = () => {
-    const apiKey = '729985b2425e06c255352da54d0994d2'; // Reemplaza con tu clave de API de TMDB
-    const url = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${query}`;
-
-    axios.get(url)
-      .then((response) => {
-        setResults(response.data.results);
-      })
-      .catch((error) => {
-        console.error('Error al buscar:', error);
-      });
+  
+  const handleSearch = async (query) => {
+    const searchResults = await searchTMDB(query);
+    setResults(searchResults);
+    navigate('/results', { state: { results: searchResults } }); 
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={query}
-          onChange={handleChange}
-          placeholder="Buscar películas o programas de televisión"
-        />
-        <button type="submit">Buscar....</button>
-      </form>
 
-      {results.map((result) => (
-        <div key={result.id}>
-          <h2>{result.title || result.name}</h2>
-          <p>{result.overview}</p>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="py-12 md:pt-5 md:pb-5">
+          <div className="pb-12 md:pb-14">
+            <div className="relative text-center md:text-center">
+            <SearchForm onSearch={handleSearch} />
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
+      </div>
+
   );
 };
 

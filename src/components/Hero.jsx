@@ -32,23 +32,12 @@ function Hero() {
               >
                 <div>
                   <Link className="btn text-white bg-project-200 hover:bg-blue-600 w-full shadow-sm" to="/signup">
-                  Explora ahora
+                  JOIN THE COMMUNITY
                   </Link>
                 </div>
-
                 <div>
-   
+               </div>
 
-    <input type="text" placeholder="Find...." className="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
-</div>
-
-
-
-                <div>
-                  <Link className="btn text-gray-600 bg-white hover:bg-blue-100 hover:text-blue-600 w-full shadow-sm" to="/signin">
-                    Sign In
-                  </Link>
-                </div>
               </div>
               {/* Stats */}
               <div className="inline-flex items-center space-x-4 md:space-x-12">

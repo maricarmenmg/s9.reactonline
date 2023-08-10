@@ -11,13 +11,11 @@ function Movies() {
 
       <Layout title="Movies">
       <main className="grow">
-     
         <Heading 
           title="Popular Movies"
           subtitle={`The most popular movies in the world`}
         />
-         <h1>Buscador de películas y programas de TV</h1>
-      <Search />
+        <Search />
         <MoviesList />
       </main>
 
