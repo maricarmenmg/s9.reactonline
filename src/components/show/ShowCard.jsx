@@ -14,7 +14,7 @@ const ShowCard = ({ show }) => {
           />
         <h2 className="mt-2 text-project-100 ">{show.name}</h2>
         <p className="font-semibold">Average: {show.vote_average}</p>
-        <Link className="text-sm" to={`/show/${show.id}`}>👁️ View More</Link>
+        <Link className="text-sm" to={`/show/${show.id}`}> View More</Link>
        
     </div>
 

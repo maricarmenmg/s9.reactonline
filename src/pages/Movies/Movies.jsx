@@ -5,6 +5,7 @@ import Search from '../../components/search/Search';
 
 
 function Movies() {
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 

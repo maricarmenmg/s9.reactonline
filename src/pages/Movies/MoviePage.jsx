@@ -1,22 +1,27 @@
 
 import { useParams } from 'react-router-dom';
 import Layout from '../../components/Layout';
-import {  GenresMovies, DurationMovies, BudgetMovies } from '../../components/Details';
+
+import {  GenresMovies, DurationMovies, BudgetMovies, RevenueMovies } from '../../components/Details';
 import  { CreditsMovies } from '../../components/Credits';
+
 import useMovies from '../../services/hooks/useMovies'
 
-import { ClockIcon }  from '@heroicons/react/24/solid'
+import LoadingSpinner from '../../components/elements/spinner';
+import { ClockIcon, CurrencyDollarIcon }  from '@heroicons/react/24/solid'
+
 
 function MoviePage() {
 
-  const { id } = useParams(); // Obtén el ID de la película desde los parámetros de la URL
-  const { movie, movieCredits } = useMovies(id); // Utiliza el ID para obtener los detalles de la película
-  
+  const { id } = useParams();
+  const { movie, movieCredits } = useMovies(id); 
   const imagesURL = import.meta.env.VITE_TMDB_IMG;
 
-  // Si no se encuentra la película o no hay datos disponibles, puedes mostrar un mensaje de error o un indicador de carga.
+
   if (!movie || Object.keys(movie).length === 0) {
-    return <div>Loading...</div>;
+    return < div className="flex justify-center items-center h-screen">
+    <LoadingSpinner />
+    </div>
   }
 
  
@@ -82,10 +87,18 @@ function MoviePage() {
 
             {/* Item Budget */}
             <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
-              <ClockIcon className="w-6 h-6 text-project-100" />
+              <CurrencyDollarIcon className="w-6 h-6 text-project-100" />
               <h4 className="text-lg font-bold">Budget</h4>
               <BudgetMovies budget={movie.budget} />
-          </div>
+           </div>
+
+
+            {/* Item Revenue */}
+            <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
+              <CurrencyDollarIcon className="w-6 h-6 text-project-100" />
+              <h4 className="text-lg font-bold">Revenue</h4>
+              <RevenueMovies revenue={movie.revenue} />
+           </div>
 
           </div>
         </div>

@@ -14,7 +14,7 @@ const MovieCard = ({ movie }) => {
         />
         <h2 className="mt-2 text-project-100 ">{movie.title}</h2>
         <p className="font-semibold">Average: {movie.vote_average}</p>
-        <Link className="text-sm" to={`/movie/${movie.id}`}> 👁️ View More </Link>
+        <Link className="font-semibold text-sm uppercase text-project-200" to={`/movie/${movie.id}`}> View More </Link>
       </div>
 
   );

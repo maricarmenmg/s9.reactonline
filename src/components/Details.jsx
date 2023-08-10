@@ -50,6 +50,15 @@ export const BudgetMovies = ({ budget }) => {
   );
 }
 
+export const RevenueMovies = ({ revenue }) => {
+  const formattedRevenue = formatCurrency(revenue);
+  return (
+      <p className="py-1 px-3 text-lg">
+        {formattedRevenue}
+      </p>
+
+  );
+}
 
 // Genres Shows
 

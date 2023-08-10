@@ -4,21 +4,21 @@ import useShows from '../../services/hooks/useShows';
 import { GenresTVShows, CreatorsTVShows, NetworkInfo } from '../../components/Details';
 import { CreditsTVShows } from '../../components/Credits';
 
-import { ClockIcon } from '@heroicons/react/24/solid';
+import LoadingSpinner from '../../components/elements/spinner';
+
+import { ClockIcon, CalendarDaysIcon, RectangleStackIcon, StarIcon, TvIcon } from '@heroicons/react/24/solid';
 
 function ShowPage() {
   const { id } = useParams();
   const { show, showCredits,} = useShows(id);
-
-
   const imagesURL = import.meta.env.VITE_TMDB_IMG;
 
-  if (Object.keys(show).length === 0 || Object.keys(showCredits).length === 0) {
-    return <div>Loading...</div>;
-  }
-
+ if (!show || Object.keys(showCredits).length === 0) {
+  return < div className="flex justify-center items-center h-screen">
+  <LoadingSpinner />
+  </div>
+}
   return (
-
 
 <Layout title={show.name}> 
 
@@ -65,7 +65,6 @@ function ShowPage() {
 
                {/* Item  Create By */}
                <div className="space-y-1 space-x-1 flex items-center  border-b-2 border-gray-200 ">
-                <ClockIcon className="w-6 h-6 text-project-100" />
                 <h4 className="text-lg font-bold ">Create By</h4>   
                 <CreatorsTVShows creators={show.created_by} />      
               </div>
@@ -79,7 +78,7 @@ function ShowPage() {
               
 {/* Item First air date */}
 <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
-                <ClockIcon className="w-6 h-6 text-project-100" />
+                <CalendarDaysIcon className="w-6 h-6 text-project-100" />
                 <h4 className="text-lg  font-bold">First air date</h4>
                 <p className="py-1 px-3 text-lg">{show.first_air_date}</p>
                 <h4 className="text-lg  font-bold">Last air date</h4>
@@ -90,22 +89,22 @@ function ShowPage() {
 
               {/* Item Seasons*/}
               <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
-                <ClockIcon className="w-6 h-6 text-project-100" />
+                <RectangleStackIcon className="w-6 h-6 text-project-100" />
                 <h4 className="text-lg  font-bold">Seasons</h4>
                 <p className="py-1 px-3 text-lg">{show.number_of_seasons} sesions</p>
             </div>
 
-          {/* Item Seasons*/}
+          {/* Item Status */}
             <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
-                <ClockIcon className="w-6 h-6 text-project-100" />
+                <StarIcon className="w-6 h-6 text-project-100" />
                 <h4 className="text-lg  font-bold">Status</h4>
                 <p className="py-1 px-3 text-lg">{show.status}</p>
             </div>
 
 
-            {/* Item */}
+            {/* Item Network */}
             <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
-              <ClockIcon className="w-6 h-6 text-project-100" />
+              <TvIcon className="w-6 h-6 text-project-100" />
               <h4 className="text-lg font-bold">Network</h4>
               <NetworkInfo network={show.networks[0]} />
               
@@ -114,7 +113,7 @@ function ShowPage() {
         </div>
         
         <div className="space-y-2 space-x-2 ">
-        <h3 className="h3 font-bold"> Main cast </h3>
+        <h4 className="h4 font-semibold uppercase p-5"> Main cast </h4>
         <CreditsTVShows creditsTV={showCredits} />
         </div>
 
