@@ -1,22 +1,23 @@
 
-
-
 export const authService = {
-  login: async (username, password) => {
+  
+  login: async (username) => {
+    if(!username) {
+      throw Error ('Username is required')
+    }
     try {
-
       const user = { username };
       localStorage.setItem('user', JSON.stringify(user));
       return user;
     } catch (error) {
-      throw new Error('Error en la autenticación');
+      throw new Error('Error en el inicio de sesión');
     }
   },
 
   register: async (username, password) => {
+
     try {
-      // Simulación de lógica de registro exitoso
-      const user = { username };
+      const user = { username, password }; // Asegúrate de usar la variable password
       localStorage.setItem('user', JSON.stringify(user));
       return user;
     } catch (error) {

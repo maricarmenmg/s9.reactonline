@@ -10,9 +10,9 @@ import ShowPage from '../pages/Shows/ShowPage';
 import Search from '../components/search/Search';
 import Results from '../components/search/SearchResults';
 
-// Auth
 import SignIn  from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+
 import NotFound from '../pages/NotFound';
 
 const AppRouter = () => (

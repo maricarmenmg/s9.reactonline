@@ -33,7 +33,7 @@ export const Login = () => {
           <form>
             <div className="flex flex-wrap -mx-3 mb-4">
                  <div className="w-full px-3">
-                    <label className="block text-project-100 text-lg font-bold font-medium mb-1" htmlFor="email">Email</label>
+                    <label className="block text-project-100 text-lg font-medium mb-1" htmlFor="email">Email</label>
                     <input 
                     id="email" 
                     type="email" 

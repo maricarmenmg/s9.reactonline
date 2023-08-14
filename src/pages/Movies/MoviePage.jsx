@@ -2,7 +2,7 @@
 import { useParams } from 'react-router-dom';
 import Layout from '../../components/Layout';
 
-import {  GenresMovies, DurationMovies, BudgetMovies, RevenueMovies } from '../../components/Details';
+import  { GenresMovies, DurationMovies, BudgetMovies, RevenueMovies } from '../../components/Details';
 import  { CreditsMovies } from '../../components/Credits';
 
 import useMovies from '../../services/hooks/useMovies'
@@ -27,7 +27,6 @@ function MoviePage() {
  
   return (
 
-
 <Layout title={movie.title}> 
 
 <section>
@@ -46,7 +45,7 @@ function MoviePage() {
               <img 
                 src={imagesURL + movie.poster_path}
                 alt={movie.name}
-               className="w-100 h-90 object-cover rounded-md shadow-md"
+                className="w-100 h-90 object-cover rounded-md shadow-md"
               />
               </div>
 

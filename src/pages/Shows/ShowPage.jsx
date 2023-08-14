@@ -86,7 +86,6 @@ function ShowPage() {
             </div>
 
 
-
               {/* Item Seasons*/}
               <div className="space-y-1 space-x-1 flex items-center border-b-2 border-gray-200">
                 <RectangleStackIcon className="w-6 h-6 text-project-100" />

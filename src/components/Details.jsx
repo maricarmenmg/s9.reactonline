@@ -1,6 +1,5 @@
 
 
-
 // Genres Movies
 export const GenresMovies = ({ genres }) => {
    const genreNames = genres.map(genre => genre.name);
