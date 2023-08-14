@@ -1,9 +1,10 @@
 
+
 export const CreditsMovies = ({ credits }) => {
     return (
       <div className="overflow-x-scroll scrollbar-thumb-blue-500 scrollbar-track-blue-200">
         <div className="flex space-x-4 p-4">
-          {credits.cast.map((cast) => (
+          {credits?.cast?.map((cast) => (
             <div key={cast.id} className="flex-shrink-0">
               <img
                 src={`https://image.tmdb.org/t/p/w200${cast.profile_path}`}
@@ -24,7 +25,7 @@ export const CreditsMovies = ({ credits }) => {
     return (
       <div className="overflow-x-scroll scrollbar-thumb-blue-500 scrollbar-track-blue-200">
         <div className="flex space-x-4 p-5">
-          {creditsTV.cast.map((cast) => (
+          {creditsTV?.cast?.map((cast) => (
             <div key={cast.id} className="flex-shrink-0">
               <img
                 src={`https://image.tmdb.org/t/p/w200${cast.profile_path}`}

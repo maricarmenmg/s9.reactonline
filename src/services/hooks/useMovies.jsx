@@ -28,7 +28,7 @@ function useMovies(id) {
     const fetchMovieCredits = async () => {
       if (id) {
         const credits = await getMovieCredits(id);
-        console.log('Movie Credits:', credits); // Agrega este console.log
+        console.log('Movie Credits:', credits); 
         setMovieCredits(credits);
       }
     }

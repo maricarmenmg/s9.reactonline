@@ -6,7 +6,7 @@ import { CreditsTVShows } from '../../components/Credits';
 
 import LoadingSpinner from '../../components/elements/spinner';
 
-import { ClockIcon, CalendarDaysIcon, RectangleStackIcon, StarIcon, TvIcon } from '@heroicons/react/24/solid';
+import { CalendarDaysIcon, RectangleStackIcon, StarIcon, TvIcon } from '@heroicons/react/24/solid';
 
 function ShowPage() {
   const { id } = useParams();
