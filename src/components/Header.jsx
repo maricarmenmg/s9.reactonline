@@ -1,11 +1,9 @@
-import  { useState } from 'react';
-import { Link } from 'react-router-dom';
+
+import { Link} from 'react-router-dom';
 import logo from '../assets/images/logo/logo.svg';
 import { FilmIcon, TvIcon, MagnifyingGlassCircleIcon} from '@heroicons/react/24/solid'
 
 function Header() {
-
-  const [searchModalOpen, setSearchModalOpen] = useState(false)
 
 
   return (
@@ -24,9 +22,9 @@ function Header() {
             {/* Desktop sign in links */}
             <ul className="flex-grow flex items-center justify-end space-x-4">
               <li className="flex items-center">
-                <FilmIcon className="h-6 w-6 text-gray-500 mr-1" />
+                <FilmIcon className="h-6 w-6 text-gray-500 mr-1 active:text-blue-500" />
                 <Link
-                  className="font-medium text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
+                  className="font-medium text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out  active:text-blue-500"
                   to="/movies"
                 >
                   Movies
@@ -66,7 +64,7 @@ function Header() {
                 </Link>
               </li>
               <li className="ml-3">
-                <Link className="btn-sm text-gray-700 uppercase bg-project-200 hover:bg-blue-600 w-full shadow-sm" to="/signup">
+                <Link className="btn-sm text-gray-700 uppercase bg-project-200 hover:bg-transparent hover:text-gray-900 hover:border-2 border-project-200 w-full " to="/signup">
                   Join The Community
                 </Link>
               </li>

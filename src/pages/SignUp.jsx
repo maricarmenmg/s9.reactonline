@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import { Register } from '../components/Form';
+import { Register } from '../components/register';
 
 
 function SignUp() {

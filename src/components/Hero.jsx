@@ -22,7 +22,7 @@ function Hero() {
                 </span>
  
               </h1>
-              <p className="text-2xl text-project-100 mb-10">
+              <p className="text-1xl text-project-100 mb-10">
               Millions of movies, TV shows and people to discover.</p>
               {/* Buttons */}
               <div
@@ -31,7 +31,7 @@ function Hero() {
                 data-aos-delay="300"
               >
                 <div>
-                  <Link className="btn text-white bg-project-200 hover:bg-blue-600 w-full shadow-sm" to="/signup">
+                  <Link className="btn text-gray-700 bg-project-200 hover:bg-transparent hover:text-gray-900 hover:border-2 border-project-200  w-full shadow-sm" to="/signup">
                   JOIN THE COMMUNITY
                   </Link>
                 </div>
@@ -59,7 +59,7 @@ function Hero() {
             </div>
             {/* Image */}
             <div
-              className="max-w-sm mx-auto md:max-w-none md:absolute md:left-[33rem] md:ml-16 lg:ml-32 xl:ml-52 mt-12 md:-mt-12"
+              className="max-w-sm mx-auto md:max-w-none md:absolute md:left-[33rem] md:ml-16 lg:ml-32 xl:ml-12 mt-12 md:-mt-12"
               data-aos="fade-left"
               data-aos-duration="1100"
             >
