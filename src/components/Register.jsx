@@ -8,7 +8,6 @@ export const Register = () => {
   const [password, setPassword] = useState('');
   //const [isLoading, setIsLoading] = useState(false); // Estado para mostrar el mensaje de error
   
-
   const handleRegister = () => {
     const user = { email, password };
     localStorage.setItem(email, JSON.stringify(user));
