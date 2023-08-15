@@ -4,7 +4,7 @@ import useShows from '../../services/hooks/useShows';
 import { GenresTVShows, CreatorsTVShows, NetworkInfo } from '../../components/Details';
 import { CreditsTVShows } from '../../components/Credits';
 
-import { LoadingSpinner } from '../../components/elements/spinner';
+//import { LoadingSpinner } from '../../components/elements/spinner';
 import { CalendarDaysIcon, RectangleStackIcon, StarIcon, TvIcon } from '@heroicons/react/24/solid';
 
 function ShowPage() {
@@ -14,7 +14,7 @@ function ShowPage() {
 
  if (!show || Object.keys(showCredits).length === 0) {
   return < div className="flex justify-center items-center h-screen">
-  <LoadingSpinner/>
+  <h3>🎬 Loading....</h3>
   </div>
 }
   return (

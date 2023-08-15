@@ -7,7 +7,7 @@ import  { CreditsMovies } from '../../components/Credits';
 
 import useMovies from '../../services/hooks/useMovies'
 
-import { LoadingSpinner } from '../../components/elements/spinner';
+//import { LoadingSpinner } from '../../components/elements/spinner';
 import { ClockIcon, CurrencyDollarIcon }  from '@heroicons/react/24/solid'
 
 
@@ -20,7 +20,7 @@ function MoviePage() {
 
   if (!movie || Object.keys(movie).length === 0) {
     return < div className="flex justify-center items-center h-screen">
-    <LoadingSpinner />
+    <h3>🎬 Loading....</h3>
     </div>
   }
 
