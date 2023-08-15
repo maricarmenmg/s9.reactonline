@@ -1,5 +1,5 @@
 
-const LoadingSpinner = () => {
+export const LoadingSpinner = () => {
   
   return (
     <div className="text-center">
@@ -14,7 +14,7 @@ const LoadingSpinner = () => {
   );
 };
 
-export default LoadingSpinner;
+
 
 
 

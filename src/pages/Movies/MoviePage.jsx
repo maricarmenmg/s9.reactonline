@@ -7,7 +7,7 @@ import  { CreditsMovies } from '../../components/Credits';
 
 import useMovies from '../../services/hooks/useMovies'
 
-import LoadingSpinner from '../../components/elements/spinner';
+import { LoadingSpinner } from '../../components/elements/spinner';
 import { ClockIcon, CurrencyDollarIcon }  from '@heroicons/react/24/solid'
 
 

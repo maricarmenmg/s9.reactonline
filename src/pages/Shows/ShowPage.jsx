@@ -4,8 +4,7 @@ import useShows from '../../services/hooks/useShows';
 import { GenresTVShows, CreatorsTVShows, NetworkInfo } from '../../components/Details';
 import { CreditsTVShows } from '../../components/Credits';
 
-import LoadingSpinner from '../../components/elements/spinner';
-
+import { LoadingSpinner } from '../../components/elements/spinner';
 import { CalendarDaysIcon, RectangleStackIcon, StarIcon, TvIcon } from '@heroicons/react/24/solid';
 
 function ShowPage() {
