@@ -14,7 +14,7 @@ function ShowPage() {
 
  if (!show || Object.keys(showCredits).length === 0) {
   return < div className="flex justify-center items-center h-screen">
-  <LoadingSpinner />
+  <LoadingSpinner/>
   </div>
 }
   return (
