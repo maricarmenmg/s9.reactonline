@@ -10,11 +10,13 @@ import Shows from '../pages/Shows/Shows';
 import ShowPage from '../pages/Shows/ShowPage';
 
 import Search from '../components/search/Search';
-import Results from '../components/search/SearchResults';
+//import Results from '../components/search/SearchResults';
 
-import Signin from '../pages/Signin';
+import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+
 import NotFound from '../pages/NotFound';
+
 
 const AppRouter = () => (
   <Router>
@@ -25,10 +27,10 @@ const AppRouter = () => (
         <Route path="/movie/:id" element={<MoviePage />} name="movie-detail"/> 
         <Route path="/shows" element={<Shows />} name="shows"/> 
         <Route path="/show/:id" element={<ShowPage />} name="show-detail"/>
-        <Route path="/signin" element={<Signin />} /> 
-        <Route path="/signup" element={<SignUp />} name="movie-detail"/> 
-        <Route path="/search" element={<Search />} name="movie-detail"/> 
-        <Route path="/results" element={<Results />} name="movie-detail"/> 
+        <Route path="/signin" element={<SignIn />} /> 
+        <Route path="/signup" element={<SignUp />} name="signup"/> 
+        <Route path="/search" element={<Search />} name="search"/> 
+        
         <Route path="*" element={<NotFound />} />
       </Routes>
       </UserProvider>
