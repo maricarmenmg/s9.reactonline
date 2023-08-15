@@ -1,13 +1,29 @@
-
+import { useContext, useState } from 'react';
 import { Link} from 'react-router-dom';
+
+import { UserContext } from '../context/UserContext'; 
+import SearchModal from './search/SearchModal';
 
 import logo from '../assets/images/logo/logo.svg';
 import { FilmIcon, TvIcon, MagnifyingGlassCircleIcon} from '@heroicons/react/24/solid'
 
 
+
 function Header() {
 
+  const { user } = useContext(UserContext); 
+  const [showModal, setShowModal] = useState(false);
   
+  const handleSearchClick = () => {
+    if (!user) {
+      setShowModal(true);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
 
   return (
     <header className="fixed  w-full z-30 bg-white">
@@ -44,14 +60,14 @@ function Header() {
               </li>
 
               <li className="flex items-center">
-                <MagnifyingGlassCircleIcon className="h-6 w-6 text-gray-500 mr-1" />
-                <Link
-                  className="font-bold text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
+                <MagnifyingGlassCircleIcon 
+                  className="h-7 w-7 text-project-200 mr-1 cursor-pointer" 
+                  onClick={handleSearchClick}
                   to="/search"
-                >
-                  Search
-                </Link>
-              </li>
+                />
+                <SearchModal isOpen={showModal} onClose={handleCloseModal} />
+               </li>
+
 
               <li className="flex items-center">
                 /

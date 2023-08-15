@@ -1,7 +1,6 @@
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
 import MoviesList from '../../components/movie/MovieList';
-import Search from '../../components/search/Search';
 
 
 function Movies() {
@@ -15,7 +14,6 @@ function Movies() {
           title="Popular Movies"
           subtitle={`The most popular movies in the world`}
         />
-        <Search />
         <MoviesList />
       </main>
 

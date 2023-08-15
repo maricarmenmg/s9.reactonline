@@ -6,8 +6,8 @@ export const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginError, setLoginError] = useState(false); // Estado para mostrar el mensaje de error
-  const [isLoading, setIsLoading] = useState(false); // Estado para mostrar el mensaje de error
+  const [loginError, setLoginError] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false); 
 
   const login = (user) => {
     setIsLoading(true);

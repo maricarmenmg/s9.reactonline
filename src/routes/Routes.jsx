@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UserProvider } from '../context/UserContext';
+
 import Home from '../pages/Home';
 // Movies
 import Movies from '../pages/Movies/Movies';
@@ -16,6 +18,7 @@ import NotFound from '../pages/NotFound';
 
 const AppRouter = () => (
   <Router>
+    <UserProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies/*" element={<Movies />} name="movie-detail"/> 
@@ -28,6 +31,7 @@ const AppRouter = () => (
         <Route path="/results" element={<Results />} name="movie-detail"/> 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </UserProvider>
   </Router>
 );
 
