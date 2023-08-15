@@ -5,6 +5,7 @@ import { XCircleIcon } from '@heroicons/react/24/solid'
 import logo from '../../assets/images/logo/logo.svg';
 
 
+// eslint-disable-next-line react/prop-types
 const SearchModal = ({ isOpen, onClose }) => {
 
   return (

@@ -21,9 +21,9 @@ const AppRouter = () => (
     <UserProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movies/*" element={<Movies />} name="movie-detail"/> 
+        <Route path="/movies/*" element={<Movies />} name="movies"/> 
         <Route path="/movie/:id" element={<MoviePage />} name="movie-detail"/> 
-        <Route path="/shows" element={<Shows />} name="movie-detail"/> 
+        <Route path="/shows" element={<Shows />} name="shows"/> 
         <Route path="/show/:id" element={<ShowPage />} name="show-detail"/>
         <Route path="/signin" element={<Signin />} /> 
         <Route path="/signup" element={<SignUp />} name="movie-detail"/> 
