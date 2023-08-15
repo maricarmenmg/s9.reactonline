@@ -1,7 +1,5 @@
 import Layout from '../components/Layout';
-import { Register } from '../components/register';
-
-
+import { Register } from '../components/Register';
 
 
 function SignUp() {
@@ -12,7 +10,7 @@ function SignUp() {
       <Layout title="SignUp">
 
       <main className="grow">
-        <Register  />
+        <Register />
       </main>
 
       </Layout>
