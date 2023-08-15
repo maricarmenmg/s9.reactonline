@@ -15,7 +15,7 @@
 - [x] 📬  Crear por lo menos 5 componentes.
 - [x] 📬  Usar input y output para pasar datos entre componentes.
 - [x] 📬  Usar las rutas.
-- [ ] 📪  Utilizar Redux o Context.
+- [x] 📬  Utilizar Redux o Context.
 - [x] 📬  Llamar mínimo a una API externa.
 - [x] 📬  Emplear servicios para implementar lógica de negocio y/o llamadas API.
 - [ ] 📪  Implementar login/registro, idealmente con Firebase, aunque puedes hacerlo con localStorage.
