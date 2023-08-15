@@ -1,10 +1,13 @@
 
 import { Link} from 'react-router-dom';
+
 import logo from '../assets/images/logo/logo.svg';
 import { FilmIcon, TvIcon, MagnifyingGlassCircleIcon} from '@heroicons/react/24/solid'
 
+
 function Header() {
 
+  
 
   return (
     <header className="fixed  w-full z-30 bg-white">
@@ -54,7 +57,6 @@ function Header() {
                 /
               </li>
               
-
               <li>
                 <Link
                   className="font-medium uppercase text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
@@ -63,6 +65,8 @@ function Header() {
                   Sign in
                 </Link>
               </li>
+
+
               <li className="ml-3">
                 <Link className="btn-sm text-gray-700 uppercase bg-project-200 hover:bg-transparent hover:text-gray-900 hover:border-2 border-project-200 w-full " to="/signup">
                   Join The Community

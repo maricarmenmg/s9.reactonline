@@ -6,10 +6,13 @@ export const Register = () => {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // Estado para mostrar el mensaje de error
+  
 
   const handleRegister = () => {
     const user = { email, password };
     localStorage.setItem(email, JSON.stringify(user));
+
     console.log('Registro exitoso');
     console.log('Email:', email);
     console.log('Password:', password);

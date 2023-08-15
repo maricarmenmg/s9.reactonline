@@ -3,23 +3,42 @@ import { Link } from 'react-router-dom';
 
 
 export const Login = () => {
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState(false); // Estado para mostrar el mensaje de error
+  const [isLoading, setIsLoading] = useState(false); // Estado para mostrar el mensaje de error
 
-  const handleLogin = () => {
-    const user = JSON.parse(localStorage.getItem(email));
-    if (user && user.password === password) {
-      console.log('Inicio de sesión exitoso');
-    } else {
-      console.log('Error en el inicio de sesión');
-    }
+  const login = (user) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      localStorage.setItem('user', JSON.stringify(user));
+      setIsLoading(false);
+    }, 1000);
   };
 
 
+  const handleLogin = () => {
+    if (email === ' ' || password === ' ') {
+      setLoginError(true);
+    } else {
+      setLoginError(false);
+      login({
+        email,
+        password,
+      });
+    }
+
+  };
     
-    return (
+
+  return (
+
     <section className="bg-transparent">
+
+  <div className="text-red-600 text-center mt-2">
+      {loginError && <p>Error en el inicio de sesión</p>}
+    </div>
   
       <div className="max-w-6xl mx-auto py-12 mt-32 sm:px-26">
         <div className="pt-6 pb-12 md:pt-6 md:pb-20">
@@ -65,7 +84,11 @@ export const Login = () => {
   
                     <div className="flex flex-wrap -mx-3 mt-6">
                       <div className="w-full px-3">
-                        <button className="btn text-project-500 bg-project-200 hover:bg-transparent hover:border-2 border-project-200 w-full" onClick={handleLogin}> Sign In </button>
+                      <button 
+                        className="btn text-project-500 bg-project-200 hover:bg-transparent hover:border-2 border-project-200 w-full" 
+                        onClick={handleLogin}>
+                       {isLoading ? 'Cargando...' : 'Sign In'}
+                      </button>
                       </div>
                     </div>
   
