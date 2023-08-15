@@ -6,7 +6,7 @@ export const Register = () => {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false); // Estado para mostrar el mensaje de error
+  //const [isLoading, setIsLoading] = useState(false); // Estado para mostrar el mensaje de error
   
 
   const handleRegister = () => {
